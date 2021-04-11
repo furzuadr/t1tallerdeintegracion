@@ -52,6 +52,10 @@ class SeriesController < ApplicationController
     def personajes
         @personas = find_person(params[:personaje], 0)
         @personaje = @personas.first
+        @citas = find_quotes(@personaje['name'])
+
+
+
     end
 
     def episodes
@@ -95,6 +99,12 @@ class SeriesController < ApplicationController
         
         request_api(
             "https://tarea-1-breaking-bad.herokuapp.com/api/episodes?series=#{URI.encode(serie)}&season=#{URI.encode(season)}"
+        )
+        end
+
+    def find_quotes(name)
+        request_api(
+            "https://tarea-1-breaking-bad.herokuapp.com/api/quote?author=#{URI.encode(name)}"
         )
         end
 

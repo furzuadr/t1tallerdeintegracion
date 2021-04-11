@@ -36,6 +36,12 @@
         <%# end %>
         <%= 'Interpretado por: '%><%=@personaje['portrayed']%>
         <br>
+        <%= 'Citas:'%>
+        <br>
+        <% @citas.each do |f| %>
+                <%= f['quote'] %>
+                <br>
+            <% end %>
     </div>
 
   </div>

@@ -7545,3 +7545,30 @@ Processing by SeriesController#personajes as HTML
 Completed 200 OK in 678ms (Views: 4.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/personaje?personaje=Walter+White" for ::1 at 2021-04-11 13:06:11 -0400
+Processing by SeriesController#personajes as HTML
+  Parameters: {"personaje"=>"Walter White"}
+Completed 500 Internal Server Error in 1030ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/series_controller.rb:105:in `find_quotes'
+app/controllers/series_controller.rb:55:in `personajes'
+Started GET "/personaje?personaje=Walter+White" for ::1 at 2021-04-11 13:06:39 -0400
+Processing by SeriesController#personajes as HTML
+  Parameters: {"personaje"=>"Walter White"}
+  Rendering series/personajes.html.erb within layouts/application
+  Rendered series/personajes.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 1681ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/personaje?personaje=Walter+White" for ::1 at 2021-04-11 13:06:55 -0400
+Processing by SeriesController#personajes as HTML
+  Parameters: {"personaje"=>"Walter White"}
+  Rendering series/personajes.html.erb within layouts/application
+  Rendered series/personajes.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 1740ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
