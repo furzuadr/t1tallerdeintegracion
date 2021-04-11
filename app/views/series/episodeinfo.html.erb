@@ -1,0 +1,22 @@
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-lg-6">
+      <% @episodio = params[:episode] %>
+        <%= 'Titulo: '%><%=@episodio['title']%>
+        <br>
+        <%= 'Fecha de lanzamiento: '%><%= @episodio['air_date']%>
+        <br>
+        <%= 'Personajes:'%>
+        <br>
+        <% @episodio['characters'].each do |f| %>
+                <%= link_to f, personaje_path(personaje: f) %>
+                <br>
+            <% end %>
+        <br>
+
+    
+    </div>
+
+  </div>
+</div>

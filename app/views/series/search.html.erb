@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-lg-6">
+      <h4>Resultados de la búsqueda</h4>
+      <% if  !@personas.empty? %>
+      <% @personas.each do |f| %>
+            <%= link_to f['name'], personaje_path(personaje: f['name']) %>
+            <br>
+        <% end %>
+        <% else%>
+        <%= 'No existen personajes con ese nombre, intentalo nuevamente!' %>
+        <% end %>
+    
+    
+    </div>
+
+  </div>
+</div>

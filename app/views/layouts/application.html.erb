@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <%#= csrf_meta_tags %>
+    <%#= csp_meta_tag %>
+
+    <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Buscador de series</title>
+    <script src="https://kit.fontawesome.com/15181efa86.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://bulmatemplates.github.io/bulma-templates/css/ghost-blog.css">
+  </head>
+
+  <body>
+  <section class="hero is-medium">
+   <div class="hero-head">
+      <div class="container">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+
+          <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+              <a class="navbar-item is-active" >
+                Series
+              </a>
+            </div>
+
+            <div class="navbar-end">
+              <div class="navbar-item">
+              <%= form_with(url: search_path, method: 'get', local: true) do %>
+                <%= label_tag :person, 'Buscar personajes'%>
+                <%= text_field_tag :person, nil, placeholder: 'Eg. Walter White', class: 'form-control' %>
+              <%= button_tag 'Search', class: 'btn btn-success btn-block' %>
+            <% end %>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="hero-body">
+      <div class="container has-text-centered">
+              <img src="https://spoilertime.com/wp-content/uploads/2019/01/C24.jpg" width="590" height="350">
+
+        <h2 class="subtitle">
+          Buscador de series Breaking Bad & Better Call Saul
+        </h2>
+      </div>
+    </div>
+
+    </section>
+  <section class="blog-posts">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-10 is-offset-1">
+        
+            <%= yield %>
+            </div>
+    </div>
+    </div>
+    </section>
+
+
+
+          
+          
+  </body>
+</html>

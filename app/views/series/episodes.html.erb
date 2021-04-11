@@ -1,0 +1,35 @@
+<div class="columns is-multiline">
+
+            <div class="column post is-6">
+              <article class="columns is-multiline">
+                <%# <div class="column is-12 post-img"> %>
+                  <%# <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image"> %>
+                <%# </div> %>
+                <div class="column is-12 featured-content ">
+                  <h1 class="title post-title">Episodios de la temporada</h1>
+                  <p class="post-excerpt">Accede a un episodios para ver su información.</p>
+                  <br>
+                  <table>
+                  <% @epi_season.each do |f| %>
+                  <tr>
+                  <th>
+                  <%= link_to f['title'], episodeinfo_path(episode: f)%>
+                  </tr>
+                  </th>
+              <% end %>
+              </table>
+
+
+                  
+                  <br>
+                  
+                </div>
+              </article>
+            </div>
+</div>
+
+
+
+
+
+
